@@ -13,6 +13,9 @@ import java.io.IOException;
 
 public class MediaRecorderTask  {
 
+    @CameraSource(
+            ID = "CameraSource-0",
+            purposes = {"to record video in app"})
     private String mOutputFile;
     private android.media.MediaRecorder mMediaRecorder;
     private Camera mCamera;

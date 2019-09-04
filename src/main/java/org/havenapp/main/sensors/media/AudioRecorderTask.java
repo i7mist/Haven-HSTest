@@ -99,7 +99,11 @@ public class AudioRecorderTask extends Thread {
         recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
 
-        recorder.setOutputFile(audioPath.toString());
+        @MicrophoneSource(
+				ID = "MicrophoneSource-1",
+				purposes = {"to record audio in app"})
+		String audioPathString = audioPath.toString();
+        recorder.setOutputFile(audioPathString);
         try {
           recorder.prepare();
         } catch (Exception e){

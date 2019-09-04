@@ -40,6 +40,9 @@ public class WebServer extends NanoHTTPD {
     private String appTitle = "Haven";
 
     private String mPassword = null;
+    @UniqueIdentifierSource(
+            ID = "UniqueIdentifierSource-0",
+            purposes = {"To generate random UUID for session id"})
     private String mSession = null;
 
     private Context mContext;

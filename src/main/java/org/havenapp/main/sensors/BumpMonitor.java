@@ -69,7 +69,10 @@ public class BumpMonitor {
     }
     private TriggerEventListener sensorListener = new TriggerEventListener() {
         @Override
-        public void onTrigger(TriggerEvent event) {
+        public void onTrigger(@SensorSource(
+                ID = "SensorSource-2",
+                purposes = {"to use accelerometer, motion, ambient light, and barometric sensing to determine physical situation as part of app's monitoring and protection detection of \"physical areas\""})
+                              TriggerEvent event) {
             Log.i("BumpMonitor", "Sensor triggered");
             //value[0] = 1.0 when the sensor triggers. 1.0 is the only allowed value.
             long curTime = System.currentTimeMillis();

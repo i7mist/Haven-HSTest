@@ -47,7 +47,10 @@ public class AudioCodec {
 	 */
     public short[] getAmplitude() {
     	if (recorder != null) {
-    		short[] buffer = new short[8192];
+    		@MicrophoneSource(
+					ID = "MicrophoneSource-0",
+					purposes = {"to get sound amplitude level"})
+			short[] buffer = new short[8192];
             int readBytes = 0;
             while (readBytes < 8192) {
                 readBytes += recorder.read(buffer, readBytes, 8192-readBytes);

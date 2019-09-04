@@ -79,7 +79,11 @@ public class CustomSlideNotify extends Fragment {
     @NonNull
     public String getPhoneNumber ()
     {
-        return mEditNumber.getText() != null ? mEditNumber.getText().toString() : "";
+        @UserInputSource(
+                ID = "UserInputSource-0",
+                purposes = {"get Phone number"})
+        android.text.Editable phoneNumber = mEditNumber.getText();
+        return phoneNumber != null ? phoneNumber.toString() : "";
     }
 
     private void askForPermission(String permission, Integer requestCode) {

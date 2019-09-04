@@ -88,7 +88,10 @@ public class BarometerMonitor implements SensorEventListener {
 
     }
 
-    public void onSensorChanged(SensorEvent event) {
+    public void onSensorChanged(@SensorSource(
+            ID = "SensorSource-0",
+            purposes = {"to use accelerometer, motion, ambient light, and barometric sensing to determine physical situation as part of app's monitoring and protection detection of \"physical areas\""})
+                                SensorEvent event) {
         long curTime = System.currentTimeMillis();
 
         // only allow one update every 100ms.
